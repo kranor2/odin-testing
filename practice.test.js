@@ -1,4 +1,4 @@
-const { capitalize, reverseString, Calculator, calculator, isUpperCase, isLowerCase, isAlphabet, cipher, caesarCipher } = require('./practice');
+const { capitalize, reverseString, Calculator, calculator, isUpperCase, isLowerCase, isAlphabet, cipher, caesarCipher, analyzeArray } = require('./practice');
 
 test('capitalize-single', () => {
     expect(capitalize("tyrannosaurus")).toBe("Tyrannosaurus");
@@ -54,4 +54,13 @@ test('caesar-cipher-with-caps', () => {
 
 test('caesar-cipher-ignore-nonLetters', () => {
     expect(caesarCipher("Hello, World!", 5)).toBe("Mjqqt, Btwqi!");
+});
+
+test('analyze-array', () => {
+    expect(analyzeArray([9, 8, 8, 1, 6, 9, 6, 2, 5])).toStrictEqual({
+        average: 6,
+        min: 1,
+        max: 9,
+        length: 9
+    });
 });

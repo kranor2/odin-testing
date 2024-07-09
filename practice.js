@@ -90,4 +90,19 @@ function caesarCipher(input, key) {
     return encrypted;
 }
 
-module.exports = { capitalize, reverseString, Calculator, calculator, isUpperCase, isLowerCase, isAlphabet, cipher, caesarCipher }
+function analyzeArray(input) {
+    let sum = 0;
+    for (let num of input) {
+        sum += num;
+    }
+    const object = {};
+
+    object['average'] = sum / input.length;
+    object['min'] = Math.min(...input);
+    object['max'] = Math.max(...input);
+    object['length'] = input.length;
+
+    return object;
+}
+
+module.exports = { capitalize, reverseString, Calculator, calculator, isUpperCase, isLowerCase, isAlphabet, cipher, caesarCipher, analyzeArray }
