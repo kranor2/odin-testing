@@ -9,4 +9,13 @@ function capitalize(input) {
     return capped;
 }
 
-module.exports = { capitalize }
+function reverseString(input) {
+    let revved = "";
+    for (let i = input.length - 1; i >= 0; i--) {
+        revved += input[i];
+    }
+
+    return revved
+}
+
+module.exports = { capitalize, reverseString }

@@ -1,4 +1,4 @@
-const { capitalize } = require('./practice');
+const { capitalize, reverseString } = require('./practice');
 
 test('capitalize', () => {
     expect(capitalize("tyrannosaurus")).toBe("Tyrannosaurus");
@@ -12,3 +12,6 @@ test('capitalize', () => {
     expect(capitalize("RAAAAAWR!")).toBe("Raaaaawr!");
 });
 
+test('reverseString', () => {
+    expect(reverseString("ankylosaurus")).toBe("suruasolykna");
+});
