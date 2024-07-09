@@ -18,4 +18,28 @@ function reverseString(input) {
     return revved
 }
 
-module.exports = { capitalize, reverseString }
+class Calculator {
+    add(num1, num2) {
+        return num1 + num2;
+    }
+    
+    subtract(num1, num2) {
+        return num1 - num2;
+    }
+
+    multiply(num1, num2) {
+        return num1 * num2;
+    }
+
+    divide(num1, num2) {
+        if (num2 === 0) {
+            return "Error! Cannot divide by 0";
+        } else {
+            return num1 / num2;
+        }
+    }
+}
+
+const calculator = new Calculator
+
+module.exports = { capitalize, reverseString, Calculator, calculator }
