@@ -42,4 +42,52 @@ class Calculator {
 
 const calculator = new Calculator
 
-module.exports = { capitalize, reverseString, Calculator, calculator }
+function isUpperCase(char) {
+    if (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isLowerCase(char) {
+    if (char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isAlphabet(char) {
+    if (isLowerCase(char) || isUpperCase(char)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function cipher(char, key) {
+    if (isLowerCase(char)) {
+        let newCode = char.charCodeAt(0) + key;
+        if (newCode > 122) newCode = 96 + newCode - 122
+        return String.fromCharCode(newCode);
+    } else {
+        let newCode = char.charCodeAt(0) + key;
+        if (newCode > 90) newCode = 64 + newCode - 90;
+        return String.fromCharCode(newCode);
+    }
+}
+
+function caesarCipher(input, key) {
+    let encrypted = '';
+    for (let char of input) {
+        if (isAlphabet(char)) {
+            encrypted += cipher(char, key);
+        } else {
+            encrypted += char;
+        }
+    }
+    return encrypted;
+}
+
+module.exports = { capitalize, reverseString, Calculator, calculator, isUpperCase, isLowerCase, isAlphabet, cipher, caesarCipher }
